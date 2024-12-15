@@ -21,7 +21,7 @@ An intelligent interview system combining RAG (Retrieval-Augmented Generation) a
 1. Clone the repository:
 
 ```bash
-git clone <repository-url>
+git clone [https://github.com/yourusername/CareerAssistant.git](https://github.com/HazelW777/CareerAssistant.git)
 cd CareerAssistant
 ```
 
@@ -46,46 +46,59 @@ PINECONE_API_KEY=your_pinecone_api_key
 PINECONE_ENV=your_pinecone_environment
 ```
 
-## Project Structure
+## Data Setup
+
+1. Download the data folder from Google Drive: https://drive.google.com/file/d/14821YqVRg3JE1oMeWiHaG0SZWY9E_N89/view?usp=drive_link
+
+2. Place the downloaded data folder in the project root directory. The structure should look like: 
 
 ```
-interview-bot/
-├── src/
-│   ├── data/          # Data processing modules
-│   ├── models/        # Model implementations
-│   ├── utils/         # Utility functions
-│   └── web/          # Web interface
-├── scripts/           # Training and testing scripts
+CareerAssistant/
 ├── data/
-│   ├── raw/          # Raw data storage
-│   └── processed/    # Processed data
-└── notebooks/        # Development notebooks
+│   ├── raw/
+│   │   └── interview_questions.json
+│   └── processed/
+│       └── model_artifacts/
+│           └── model_epoch_3/
+├── src/
+├── scripts/
+...
 ```
 
 ## Usage
 
-1. Process the data:
+1. Process the data (if using new data):
 
 ```bash
 python scripts/prepare_training_data.py
 ```
 
-2. Train the model:
+2. Train the model (if needed):
 
 ```bash
 python scripts/train_model.py
 ```
 
-3. Run performance evaluation:
-
-```bash
-python scripts/evaluate_performance.py
-```
-
-4. Start the web interface:
+3. Start the web interface:
 
 ```bash
 streamlit run src/web/app.py
+```
+
+## Test Examples
+
+You can test the system with these sample inputs:
+
+1. Junior Developer:
+
+```bash
+I’m a recent computer science graduate with a focus on Python and Django for backend development, preparing for campus recruitment interviews.
+```
+
+2. Senior Engineer:
+
+```bash
+I’m a backend engineer with 5 years of experience, specializing in distributed systems and microservices architecture, using Go and Java.
 ```
 
 ## Model Performance
