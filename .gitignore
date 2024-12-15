@@ -1,0 +1,7 @@
+.env
+.DS_Store
+.DS_Store?
+**/.DS_Store
+data/
+data.tar.gz
+venv/
